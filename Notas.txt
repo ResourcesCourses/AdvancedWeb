@@ -1,30 +1,33 @@
-- position (absoluta - que sale del flujo de renderizado) (relativa - que mantien su orden en el renderizado)
+* position (absoluta - que sale del flujo de renderizado) (relativa - que mantien su orden en el renderizado)
 	relative (solo ajusta top, left, right, bottom)
 	absolute (absouta con respecto al primer padre no estatico que encuentra)
 	fixed (absouta con respecto al viewport)
 	sticky (realtiva hasta cierto limite, luego absoluta con respecto al viewport)
 
-- display
+* display
 	block (uno bajo el otro ocupando el máximo espacio posible del padre, se setean alto, ancho, margin, padding)
 	inline (uno junto al otro ocupando justo el espacio necesario, se setean margin y padding horizontales unicamente)
 	inline-block (uno junto al otro pero deja setear todas las propiedades)
 
-- box-sizing: content-box / border-box 
+* box-sizing: content-box / border-box 
 	tomar o no tomar el borde al definir heigth o width 
 
-- linear-gradient(to right bottom, red, blue)
+* linear-gradient(to right bottom, red, blue)
 	nace en la izquierda superior de rojo a azul
 
-- text-transform
+* text-transform
 	transforma en mayusculas, minusculas, capitalizado
 
-- letter-spacing
+* letter-spacing
 	separacion entre los caracteres de las palabras
 
-- transform
-	cambia el sistema de coordenadas de un bjeto
+* transform
+	cambia el sistema de coordenadas de un objeto
 
-- @keyframes name {
+* -webkit-background-clip: text
+	ajusta el background al texto escrito, va junto con color: transparent  
+
+* @keyframes name {
 	0% {
 
 	}
@@ -35,28 +38,28 @@
   }
 	define de acuerdo a los porcentajes lo que debe hacer la transición. Cuando una animación termina el elemento regresa a sus valores iniciales
 
-- animation-name
+* animation-name
 	propiedad puesta al elemento para enlazarle la animación 
 
-- animation-duration
+* animation-duration
 	determina cuanto debe durar la animación
 
-- animation-delay
+* animation-delay
 	determina el tiempo en que debe empezar la transición
 
-- animation-iteration-count
+* animation-iteration-count
 	determina el numero de veces que debe repetirse la animación
 
-- animation-fill-mode
+* animation-fill-mode
 	dteremina el comportamiento antes de empezar la transición(backwards) o al finalizar (forwards)
 
-- backface-visibility: hidden
+* backface-visibility: hidden
 	oculta la cara posterior de un objeto cuando gira. Tambien arregla la agitacion de elementos en animaciones
 
-- transition: all 0.2
+* transition: all 0.2
 	especifica que propiedades deben modificar su transición y en cuanto tiempo se debe ejecutar. Por ejmplo el hover, active, visited, etc
 
-- ::after 
+* ::after 
 	como debe cambiar el elemento despues de ser renderizado. Debe tener un content (string) y un display. Es como un hijo del elemento original
 
 
