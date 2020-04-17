@@ -1,3 +1,7 @@
+Linea iconset, icomoon. (iconos)
+https://gs.statcounter.com/screen-resolution-stats (pantallas usadas)
+
+
 * position (absoluta - que sale del flujo de renderizado) (relativa - que mantien su orden en el renderizado)
 	relative (solo ajusta top, left, right, bottom)
 	absolute (absouta con respecto al primer padre no estatico que encuentra)
