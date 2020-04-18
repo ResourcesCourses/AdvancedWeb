@@ -2,11 +2,21 @@
 	box-sizing: border-box;
 }
 
-.container1 {
-	background-color: #eee;
+h5 {
+	font-weight: 300;
+	font-size: 30px;
 	width: 1000px;
+	margin: 0 auto;
+}
+
+body > div {
+	background-color: #eee;
 	margin: 30px auto;
+	width: 1000px;
 	display: grid;
+}
+
+.container1 {
 	grid-template-rows: repeat(2, 150px); // grid-template-rows: 150px 150px;
 	grid-template-columns: repeat(3, 1fr); // grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 30px; // grid-row-gap: 30px; // grid-column-gap: 30px;
@@ -50,10 +60,6 @@
 ///////////////// SECOND /////////////////////
 
 .container2 {
-	background-color: #eee;
-	width: 1000px;
-	margin: 50px auto;
-	display: grid;
 	// Opcion 1 - sin nombres
 	// grid-template-rows: 50px 100px 250px 50px;
 	// Opcion 2 - con nombres
@@ -91,15 +97,13 @@
 ///////////////// THIRD /////////////////////
 
 .container3 {
-	background-color: #eee;
-	width: 1000px;
-	margin: 50px auto;
-	display: grid;
 	grid-template-rows: 50px 100px 250px 50px;
 	grid-template-columns: repeat(3, 1fr) 200px;
 	grid-gap: 10px;
+
 	// Opcion 3 - nombrando grid areas
 	grid-template-areas: "head head head head" "box box box side" "main main main side" "foot foot foot foot";
+
 	& > * {
 		background-color: red;
 		color: white;
@@ -128,14 +132,19 @@
 ///////////////// FOURTH /////////////////////
 
 .container4 {
-	background-color: #ddd;
-	width: 1000px;
-	margin: 50px auto;
-
-	display: grid;
 	grid-template-rows: 150px 150px;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 30px;
+
+	// Determinar el flujo de crecimiento implicito
+	grid-auto-flow: row;
+	grid-auto-rows: 80px;
+
+	// Alinear items en las grid areas
+	align-items: center;
+	justify-items: start;
+
+	// Alinear grid track (col, row) al grid container
 
 	.item {
 		padding: 20px;
@@ -146,7 +155,89 @@
 
 		&--4 {
 			background-color: pink;
-			// grid-row: 2/ span 3;
+			grid-row: 2 / span 3;
+		}
+
+		&--7 {
+			background-color: palevioletred;
+			grid-column: 1/-1;
+		}
+	}
+}
+
+///////////////// FIFTH /////////////////////
+
+.container5 {
+	grid-gap: 30px;
+
+	// Alinear grid track (col, row) al grid container
+	grid-template-rows: repeat(2, 100px);
+	grid-template-columns: repeat(2, 200px);
+	grid-auto-rows: 80px;
+	height: 1000px;
+
+	justify-content: start;
+	align-content: end;
+
+	.item {
+		padding: 20px;
+		color: white;
+		font-family: sans-serif;
+		font-size: 30px;
+		background-color: orangered;
+
+		&--4 {
+			align-self: start;
+			background-color: pink;
+			grid-row: 2 / span 3;
+		}
+
+		&--7 {
+			background-color: palevioletred;
+			grid-column: 1/-1;
+		}
+	}
+}
+
+///////////////// SIXTH /////////////////////
+
+.container6 {
+	width: 90%;
+
+	// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: max-content 1fr 1fr min-content;
+	grid-template-rows: repeat(2, minmax(150px, min-content));
+
+	.item {
+		padding: 20px;
+		color: white;
+		font-family: sans-serif;
+		font-size: 30px;
+		background-color: orangered;
+
+		&--1 {
+			background-color: orangered;
+		}
+		&--2 {
+			background-color: yellowgreen;
+		}
+		&--3 {
+			background-color: blueviolet;
+		}
+		&--4 {
+			background-color: palevioletred;
+		}
+		&--5 {
+			background-color: royalblue;
+		}
+		&--6 {
+			background-color: goldenrod;
+		}
+		&--7 {
+			background-color: crimson;
+		}
+		&--8 {
+			background-color: darkslategray;
 		}
 	}
 }

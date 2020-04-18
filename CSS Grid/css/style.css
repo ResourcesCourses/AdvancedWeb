@@ -1,11 +1,19 @@
 * {
   box-sizing: border-box; }
 
-.container1 {
-  background-color: #eee;
+h5 {
+  font-weight: 300;
+  font-size: 30px;
   width: 1000px;
+  margin: 0 auto; }
+
+body > div {
+  background-color: #eee;
   margin: 30px auto;
-  display: grid;
+  width: 1000px;
+  display: grid; }
+
+.container1 {
   grid-template-rows: repeat(2, 150px);
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px; }
@@ -37,10 +45,6 @@
       grid-column: 2/3; }
 
 .container2 {
-  background-color: #eee;
-  width: 1000px;
-  margin: 50px auto;
-  display: grid;
   grid-template-rows: [header-start] 50px [header-end box-start] 100px [box-end main-start] 250px [main-end footer-start] 50px [footer-end];
   grid-template-columns: repeat(3, 1fr) 200px;
   grid-gap: 10px; }
@@ -66,10 +70,6 @@
   grid-column: 1/-1; }
 
 .container3 {
-  background-color: #eee;
-  width: 1000px;
-  margin: 50px auto;
-  display: grid;
   grid-template-rows: 50px 100px 250px 50px;
   grid-template-columns: repeat(3, 1fr) 200px;
   grid-gap: 10px;
@@ -94,13 +94,13 @@
   grid-area: foot; }
 
 .container4 {
-  background-color: #ddd;
-  width: 1000px;
-  margin: 50px auto;
-  display: grid;
   grid-template-rows: 150px 150px;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px; }
+  grid-gap: 30px;
+  grid-auto-flow: row;
+  grid-auto-rows: 80px;
+  align-items: center;
+  justify-items: start; }
   .container4 .item {
     padding: 20px;
     color: white;
@@ -108,4 +108,57 @@
     font-size: 30px;
     background-color: orangered; }
     .container4 .item--4 {
-      background-color: pink; }
+      background-color: pink;
+      grid-row: 2 / span 3; }
+    .container4 .item--7 {
+      background-color: palevioletred;
+      grid-column: 1/-1; }
+
+.container5 {
+  grid-gap: 30px;
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(2, 200px);
+  grid-auto-rows: 80px;
+  height: 1000px;
+  justify-content: start;
+  align-content: end; }
+  .container5 .item {
+    padding: 20px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background-color: orangered; }
+    .container5 .item--4 {
+      align-self: start;
+      background-color: pink;
+      grid-row: 2 / span 3; }
+    .container5 .item--7 {
+      background-color: palevioletred;
+      grid-column: 1/-1; }
+
+.container6 {
+  width: 90%;
+  grid-template-columns: max-content 1fr 1fr min-content;
+  grid-template-rows: repeat(2, minmax(150px, min-content)); }
+  .container6 .item {
+    padding: 20px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background-color: orangered; }
+    .container6 .item--1 {
+      background-color: orangered; }
+    .container6 .item--2 {
+      background-color: yellowgreen; }
+    .container6 .item--3 {
+      background-color: blueviolet; }
+    .container6 .item--4 {
+      background-color: palevioletred; }
+    .container6 .item--5 {
+      background-color: royalblue; }
+    .container6 .item--6 {
+      background-color: goldenrod; }
+    .container6 .item--7 {
+      background-color: crimson; }
+    .container6 .item--8 {
+      background-color: darkslategray; }
